@@ -44,6 +44,10 @@ var getJSONData = function(url){
 function moverAlLogin(){
   if(!location.pathname.endsWith("login.html") && localStorage.getItem("correo")=== null){ 
   location.href="login.html"
+ }else{
+  let nuevoUsuario= document.getElementById("miUsuario");
+  let nuevoUsuario2= document.createTextNode(localStorage.getItem("correo"));
+  nuevoUsuario.appendChild(nuevoUsuario2);
  }
 }
 moverAlLogin();
