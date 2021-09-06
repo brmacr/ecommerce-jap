@@ -1,8 +1,8 @@
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
-const ORDER_ASC_BY_PRECIO = "$↑↑";
-const ORDER_DESC_BY_PRECIO = "$↓↓";
+const ORDER_ASC_BY_PRECIO = document.getElementById("sortAsc");
+const ORDER_DESC_BY_PRECIO = document.getElementById("sortDesc");
 const ORDER_BY_DESC_RELEVANCIA = "Relevancia";
 let currentProductsArray = [];
 let currentSortCriteria = undefined;
