@@ -40,6 +40,18 @@ var getJSONData = function(url){
     });
 }
 
+//Mover al Login, solo si mi pagina no termina en login.html y no se encuentra un usuario logeado.
+function moverAlLogin(){
+  if(!location.pathname.endsWith("login.html") && localStorage.getItem("correo")=== null){ 
+  location.href="login.html"
+ }else{
+  let nuevoUsuario= document.getElementById("miUsuario");
+  let nuevoUsuario2= document.createTextNode(localStorage.getItem("correo"));
+  nuevoUsuario.appendChild(nuevoUsuario2);
+ }
+}
+moverAlLogin();
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
