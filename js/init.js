@@ -52,6 +52,11 @@ function moverAlLogin(){
 }
 moverAlLogin();
 
+// Cerrar sesión.
+document.getElementById("cerrar").addEventListener("click", (e) => {
+  localStorage.clear();
+  location.reload();
+});
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.

@@ -11,6 +11,7 @@
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
 
   <style>
     .bd-placeholder-img {
@@ -40,14 +41,22 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <a class="py-2 d-none d-md-inline-block" href="#" id="miUsuario"></a>
+      <div class="dropdown" id="miDropdown">
+        <a class="py-2 d-none d-md-inline-block" href="#" id="miUsuario"></a>
+        <div class="drop-content">
+          <a class="py-2 d-none d-md-inline-block" href="my-profile.html">Mi perfil <i class="fas fa-user-cog"></i></a>
+          <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito <i class="fas fa-shopping-cart"></i></a>
+          <a class="py-2 d-none d-md-inline-block" id="cerrar" href="">Cerrar Sesión <i
+              class="fas fa-sign-in-alt"></i></a>
+        </div>
+      </div>
     </div>
   </nav>
   <div class="container p-5">
     <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
       <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 17/10/2021) y Entrega 7 (Fecha de entrega: 14/11/2021).</p>
+      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 17/10/2021) y Entrega 7 (Fecha de entrega:
+        14/11/2021).</p>
       <hr>
       <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
     </div>
