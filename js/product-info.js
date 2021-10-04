@@ -1,5 +1,7 @@
 let product = {};
+let products = {};
 let comentariosLindos = {};
+
 
 function showImagesGallery(array) {
 
@@ -53,6 +55,26 @@ function mostrarComentarios() {
     document.getElementById("comentarios").innerHTML = htmlContentToAppend;
 }
 
+function mostrarProductosRelacionados() {
+
+    let htmlContentToAppend = "";
+    for (let i = 0; i < product.relatedProducts.length; i++) {
+        let prodct = products[product.relatedProducts[i]];
+
+        htmlContentToAppend += `
+        <div class="col-lg-3 col-md-4 col-6">
+            <div class="d-block mb-4 h-100">
+                <img class="img-fluid img-thumbnail" src="` + prodct.imgSrc + `" alt="">
+                <small>` + prodct.name + `</small>
+                <small>` + prodct.currency + ` ` + prodct.cost +  `</small>
+            </div>
+        </div>
+        `
+    }
+    document.getElementById("productosRelacionados").innerHTML = htmlContentToAppend;
+
+}
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
@@ -61,14 +83,12 @@ document.addEventListener("DOMContentLoaded", function (e) {
         if (resultObj.status === "ok") {
             product = resultObj.data;
 
-
             let productNameHTML = document.getElementById("productName");
             let productDescriptionHTML = document.getElementById("productDescription");
             let productSoldCountHTML = document.getElementById("productSoldCount");
             let productCurrencyHTML = document.getElementById("productCurrency");
             let productCategoryHTML = document.getElementById("productCategory");
             let usuario = document.getElementById("usuario");
-
 
             productNameHTML.innerHTML = product.name;
             productDescriptionHTML.innerHTML = product.description;
@@ -77,11 +97,16 @@ document.addEventListener("DOMContentLoaded", function (e) {
             productCategoryHTML.innerHTML = product.category;
             usuario.value = localStorage.getItem("correo");
 
-
             //Muestro las imagenes en forma de galería
             showImagesGallery(product.images);
-        }
 
+            getJSONData(PRODUCTS_URL).then(function (resultObj) {
+                if (resultObj.status === "ok") {
+                    products = resultObj.data;
+                    mostrarProductosRelacionados();
+                }
+            })
+        }
     });
     getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function (resultObj) {
         if (resultObj.status === "ok") {
@@ -89,5 +114,4 @@ document.addEventListener("DOMContentLoaded", function (e) {
             mostrarComentarios();
         }
     })
-
 });
