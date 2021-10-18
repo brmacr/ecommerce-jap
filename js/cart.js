@@ -25,7 +25,7 @@ function subTotal() {
 
 function costoEnvios() {
     let subtotal = document.getElementById("subTotalCompras").value;
-    let costosEnvio = document.getElementsByName("boton");
+    let costosEnvio = document.getElementsByName("tipo");
     let costo = 0;
     for (let radio of costosEnvio) {
         if (radio.checked) {
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             subTotal();
             costoEnvios();
             total();
-            let costosEnvio = document.getElementsByName("boton");
+            let costosEnvio = document.getElementsByName("tipo");
             for (let radio of costosEnvio) {
                 radio.addEventListener("click", function(e){
                     costoEnvios();
