@@ -52,15 +52,104 @@
       </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 17/10/2021) y Entrega 7 (Fecha de entrega:
-        14/11/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <main>
+    <div class="container">
+      <div class="text-center p-4">
+        <h1 id="carrito"> Mi carrito</h1>
+      </div>
+      <h4 class="mb-3"> Articulos a comprar</h4>
+      <div class="item row justify-content-md-center">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col"> Nombre</th>
+              <th scope="col"> Precio por Unidad</th>
+              <th scope="col"> Cantidad</th>
+              <th scope="col"> Subtotal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="imagenPerra"></td>
+              <td id="articlesName"></td>
+              <td>
+                <p id="articlesPrecioUnidad"></p><input type="number" disabled id="precioUnidad">
+              </td>
+              <td><input type="number" name="" id="cantidadArticulos" min="1" max="100"></td>
+              <td><label id="moneda2"></label><input type="number" disabled id="subTotalCompras"></td>
+            </tr>
+          </tbody>
+        </table>
+        <form>
+          <hr>
+          <legend id="tipoEnvio"> Tipo de Envío:</legend>
+          <input type="radio" name="boton" value="0.2">Premium 2 a 5 días (20%)<br>
+          <input type="radio" name="boton" value="0.1">Express 6 a 9 días (10%)<br>
+          <input type="radio" name="boton" value="0.05" checked>Estándar 12 a 15 días (5%)<br>
+          <hr>
+          <fieldset>
+            <legend>Dirección de envío:</legend>
+            <p>Calle: <input type="text" size="33" required></p>
+            <p>Número: <input type="number" required></p>
+            <p>Esquina: <input type="text" size="30" required></p>
+          </fieldset>
+          <hr>
+          <div class="col">
+            <h4>Costo:</h4>
+            <ul class="list-group mb-3">
+              <li class="list-group-item d-flex justify-cont betwen lh-condensed">
+                <div>
+                  <h6>Subtotal:</h6>
+                  <small class="text-muted">Costo unitario por unidad.</small><br>
+                  <span class="text-muted" id="suBtotal"></span>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-cont betwen lh-condensed">
+                <div>
+                  <h6>Costo de Envío:</h6>
+                  <small class="text-muted">Según tipo de envío.</small><br>
+                  <span class="text-muted" id="costoEnvio"></span>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-cont betwen lh-condensed">
+                <div>
+                  <h6>Total($):</h6>
+                  <span class="text-muted" id="total"></span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col">
+              <h4 class="mb-3">Forma de pago</h4>
+              <input type="radio" name="perri"><label>Tarjeta de Credito</label>
+              <input type="number" placeholder="Numero de Tarjeta">
+              <input type="number" placeholder="Codigo de seg.">
+              <input type="month" name="Fecha de vencimiento"><br>
+              <input type="radio" name="perri"><label>Tranferencia Bancaria</label>
+              <input type="number" placeholder="Numero de Cuenta">
+            </div>
+          </div>
+          <div class="row">
+            <button class="btn btn-primary btn-lg my-5" type="submit"> Finalizar compra</button>
+          </div>
+        </form>
+      </div>
     </div>
-  </div>
+  </main>
+
+  <footer class="text-muted bg-light">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    </div>
+  </footer>
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
