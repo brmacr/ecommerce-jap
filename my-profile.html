@@ -31,6 +31,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/dropzone.css" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -40,8 +41,15 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <a class="py-2 d-none d-md-inline-block" href="#" id="miUsuario"></a>
+      <div class="dropdown" id="miDropdown">
+        <a class="py-2 d-none d-md-inline-block" href="#" id="miUsuario"></a>
+        <div class="drop-content">
+          <a class="py-2 d-none d-md-inline-block" href="my-profile.html">Mi perfil <i class="fas fa-user-cog"></i></a>
+          <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito <i class="fas fa-shopping-cart"></i></a>
+          <a class="py-2 d-none d-md-inline-block" id="cerrar" href="">Cerrar Sesión <i
+              class="fas fa-sign-in-alt"></i></a>
+        </div>
+      </div>
     </div>
   </nav>
   <div class="container p-5">
