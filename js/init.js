@@ -54,7 +54,7 @@ moverAlLogin();
 
 // Cerrar sesión.
 document.getElementById("cerrar").addEventListener("click", (e) => {
-  localStorage.clear();
+  localStorage.removeItem("correo");
   location.reload();
 });
 //Función que se ejecuta una vez que se haya lanzado el evento de
