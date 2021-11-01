@@ -46,21 +46,21 @@ function showProductsList(){
             ((maxCount == undefined) || (maxCount != undefined && parseInt(products.cost) <= maxCount))){
 
         htmlContentToAppend += `
-        <div class="list-group-item list-group-item-action">
-            <div class="row">
-                <div class="col-3">
-                    <img src="` + products.imgSrc + `" alt="` + products.description + `" class="img-thumbnail">
-                </div>
-                <div class="col">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h4 class="mb-1">`+ products.name +`</h4>
-                        <small class="text-muted">` + products.soldCount +  ` vendidos</small>
+        <div class="card">
+                    <div class="row">
+                        <img src="` + products.imgSrc + `" alt="` + products.description + `" class="bd-placeholder-img card-img-top">
                     </div>
-                    <p>`+ products.description +`</p>
-                    <small class="text-muted" >` + products.currency + ` ` + products.cost + `</small>
+                    <div class="card-body">
+                        <div class="justify-content-between">
+                            <h4 class="m-3">`+ products.name + `</h4>
+                            <div class="text-muted">` + products.soldCount + ` vendidos</div>
+                        </div>
+                        <div class="card-text">`+ products.description + `</div>
+                        <p class="text-muted" >` + products.currency + ` ` + products.cost + `</p>
+                    </div>
                 </div>
-            </div>
-        </div>
+        `
+        }
         `
     }
         document.getElementById("productos_muchos").innerHTML=htmlContentToAppend;
