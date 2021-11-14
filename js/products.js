@@ -46,7 +46,7 @@ function showProductsList() {
 
             htmlContentToAppend += `
         <div class="card">
-                    <div class="row">
+                    <div >
                         <img src="` + products.imgSrc + `" alt="` + products.description + `" class="bd-placeholder-img card-img-top">
                     </div>
                     <div class="card-body">
