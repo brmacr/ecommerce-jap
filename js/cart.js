@@ -41,6 +41,66 @@ function total() {
     document.getElementById("total").innerHTML = subToTal + costoEenvio;
 }
 
+// DESACTUVA SEGUN SELECCION PAGO
+function desactivarSegun() {
+    let tarjeta = document.getElementById("tarjetaDeCredito");
+    let numeroTarjeta = document.getElementById('nTarjeta');
+    let nombreTitular = document.getElementById('nombreTitular');
+    let ci = document.getElementById('cI');
+    let fechaVcto = document.getElementById('fecha');
+    let codseg = document.getElementById('cVV');
+    let tranBancaria = document.getElementById("tBancaria")
+    let cuenta = document.getElementById('cuentaBancaria');
+    tarjeta.addEventListener("click", function () {
+        if (tarjeta.checked === true) {
+            cuenta.disabled = true;
+            numeroTarjeta.disabled = false;
+            nombreTitular.disabled = false;
+            ci.disabled = false;
+            fechaVcto.disabled = false;
+            codseg.disabled = false;
+        }
+    })
+    tranBancaria.addEventListener("click", function () {
+        if (tranBancaria.checked = true) {
+            cuenta.disabled = false;
+            numeroTarjeta.disabled = true;
+            nombreTitular.disabled = true;
+            ci.disabled = true;
+            fechaVcto.disabled = true;
+            codseg.disabled = true;
+        }
+    })
+}
+
+function formularioCompraArticulo() {
+    let tarjeta = document.getElementById("tarjetaDeCredito");
+    let numeroTarjeta = document.getElementById('nTarjeta');
+    let nombreTitular = document.getElementById('nombreTitular');
+    let ci = document.getElementById('cI');
+    let fechaVcto = document.getElementById('fecha');
+    let codseg = document.getElementById('cVV');
+    let tranBancaria = document.getElementById("tBancaria")
+    let cuentag = document.getElementById('cuentaBancaria');
+
+
+    let formC = document.getElementById("granForm");
+    formC.addEventListener("submit", function (e) {
+        if (tarjeta.checked === true && (numeroTarjeta.value === "" || nombreTitular.value === "" || ci.value === "" || fechaVcto.value === "" || codseg.value === "")) {
+            e.preventDefault();
+            alert("¡Olvidaste tus datos de tarjeta!")
+        } else if (tranBancaria.checked === true && cuentag.value === "") {
+            e.preventDefault();
+            alert("¡Olvidaste tus datos de la cuenta!")
+        }
+        else {
+            alert("¡Finalizó su compra!")
+        }
+    })
+}
+
+
+
 document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(CART_INFO_URL).then(function (resultObj) {
         if (resultObj.status === "ok") {
@@ -68,13 +128,16 @@ document.addEventListener("DOMContentLoaded", function (e) {
             total();
             let costosEnvio = document.getElementsByName("tipo");
             for (let radio of costosEnvio) {
-                radio.addEventListener("click", function(e){
+                radio.addEventListener("click", function (e) {
                     costoEnvios();
                     total();
                 })
             }
+
             //Muestro las imagen
             mostrarImagenArticulo();
         }
+        desactivarSegun();
+        formularioCompraArticulo();
     });
 });
