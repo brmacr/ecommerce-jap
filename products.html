@@ -22,8 +22,15 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <a class="py-2 d-none d-md-inline-block" href="#" id="miUsuario"></a>
+      <div class="dropdown" id="miDropdown">
+        <a class="py-2 d-none d-md-inline-block" href="#" id="miUsuario"></a>
+        <div class="drop-content">
+          <a class="py-2 d-none d-md-inline-block" href="my-profile.html">Mi perfil <i class="fas fa-user-cog"></i></a>
+          <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito <i class="fas fa-shopping-cart"></i></a>
+          <a class="py-2 d-none d-md-inline-block" id="cerrar" href="">Cerrar Sesión <i
+              class="fas fa-sign-in-alt"></i></a>
+        </div>
+      </div>
     </div>
   </nav>
   <!-- Productos -->
@@ -71,11 +78,12 @@
           </div>
         </div>
       </div>
-      <div class="container">
-        <div class="row">
-          <a href="product-info.html">
-            <div class="list-group" id="productos_muchos">
-            </div>
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <div class="row">
+            <a href="product-info.html" class="card-columns custom-card"">
+              <div id="productos_muchos">
+          </div>
           </a>
         </div>
       </div>
